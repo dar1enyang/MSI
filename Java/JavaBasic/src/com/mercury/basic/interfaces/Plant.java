@@ -1,9 +1,7 @@
 package com.mercury.basic.interfaces;
 
 // if an interface contains exact 1 abstract function(no matter how many static / default)
-
 // this interface can be called Functional Interface
-
 // Cannot create object from interface
 @FunctionalInterface
 public interface Plant {
@@ -20,6 +18,7 @@ public interface Plant {
 	 * 
 	 * 3. static
 	 */
+	int X = 5;
 
 	void grow();
 

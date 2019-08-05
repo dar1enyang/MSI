@@ -1,5 +1,7 @@
 package com.mercury.basic;
 
+import com.mercury.basic.constructors.Test1;
+
 // static is a keyword, can be added in front of a function / block/ field / inner class
 // static cannot be added in front of an outer class
 
@@ -28,6 +30,7 @@ public class StaticTest {
 
 	public static void main(String[] args) {
 		bar();
+		Test1 t = new Test1(x);
 	}
 
 }
