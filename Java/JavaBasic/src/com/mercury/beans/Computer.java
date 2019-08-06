@@ -1,6 +1,11 @@
+
+//Created:	2019/08/05
+
 package com.mercury.beans;
 
-public class Computer {
+import java.lang.reflect.Field;
+
+public final class Computer {
 	/*
 	 * java bean - POJO bean (plain old java object)
 	 * 
@@ -58,6 +63,10 @@ public class Computer {
 		return price;
 	}
 
+	public static String getType() {
+		return TYPE;
+	}
+
 	public void setPrice(int price) {
 		this.price = price;
 	}
@@ -66,11 +75,15 @@ public class Computer {
 	// object looks like
 	@Override
 	public String toString() {
-		return this.getBrand() + " " + this.getSize() + " " + this.getPrice();
+		return "Brand: " + this.getBrand() + ", size: " + this.getSize() + ", price: " + this.getPrice() + ", type: "
+				+ Computer.getType();
 	}
 
 	public static void main(String[] args) {
 		Computer computer = new Computer("Apple", 20, 20);
-		System.out.println(computer);
+		System.out.println(computer.hashCode() + ": " + computer);
+		Class<Computer> computerClass = Computer.class;
+		Field[] valueFields = computerClass.getDeclaredFields();
+
 	}
 }
