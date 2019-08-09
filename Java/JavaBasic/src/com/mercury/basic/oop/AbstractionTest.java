@@ -6,7 +6,7 @@ public class AbstractionTest {
 
 		// concrete function : can exist in concrete class / abstract class
 		// abstract function has no body
-		// abstract function : can only exist in abstract function / interface
+		// abstract function : can only exist in abstract class / interface
 
 		// static function will be loaded at very beginning and cannot be overridden
 		// so static function cannot be abstract

@@ -2,6 +2,14 @@ package com.mercury.threads;
 
 public class ThreadBasic {
 
+	// Multi-Thread could raise up the performance of the CPU
+	// May have risk of conflict on the shared resource
+
+	// Strategy to solve shared resource conflict
+	// 1. Synchronized
+	// 2. Copy of shared resource <- Less interviews asked
+	// 2.5 Immutable
+
 	public static void test() {
 		System.out.println(Thread.currentThread().getName() + " testing...");
 		try {
@@ -26,6 +34,7 @@ public class ThreadBasic {
 	// 2. Override run() function to define the logic for this thread
 	// 3. Create an object from this class, eg called obj
 	// 4. new Thread(obj).start();
+
 	public static class MyThread extends Thread {
 
 		@Override
@@ -39,8 +48,10 @@ public class ThreadBasic {
 		System.out.println("*******************");
 
 		MyThread myThread = new MyThread();
-		myThread.setDaemon(true); // make this thread is a daemon thread
-		myThread.start(); // create a new thread to execute run()
+		myThread.setDaemon(true);
+		// make this thread is a daemon thread
+		myThread.start();
+		// create a new thread to execute run()
 		// myThread.run();
 
 		// test();
