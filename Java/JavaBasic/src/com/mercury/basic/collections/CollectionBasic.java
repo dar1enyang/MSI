@@ -1,6 +1,7 @@
 package com.mercury.basic.collections;
 
 import com.mercury.beans.Dog;
+import com.mercury.beans.Macaron;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -34,6 +35,21 @@ public class CollectionBasic {
         Map<Integer, String> tm = new TreeMap<>();
 
         // Comparable
+
+        Queue<Macaron> q = new PriorityQueue<Macaron>(3, (a, b) -> (
+            a.getPrice() - b.getPrice()
+        ));
+        Comparator<Macaron> q2 = (a, b) -> (a.getPrice() - b.getPrice());
+
+
+        Comparator<Macaron> cmp = new Comparator<Macaron>() {
+            @Override
+            public int compare(Macaron o1, Macaron o2) {
+
+                return o1.getPrice() - o2.getPrice();
+            }
+        };
+        Queue<Macaron> pq = new PriorityQueue<>(3, cmp);
 
     }
 }

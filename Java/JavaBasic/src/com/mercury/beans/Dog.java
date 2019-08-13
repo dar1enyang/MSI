@@ -3,9 +3,9 @@ package com.mercury.beans;
 import java.io.Serializable;
 
 // Marker Interface
-public class Dog implements Serializable {
+public class Dog implements Serializable, Comparable<Dog>{
 
-	// only one static field can be serialized
+	// only 1 static field can be serialized
 	// specify, or JVM will generate one for this class
 	private static final long serialVersionUID = 4704502011894853036L;
 
@@ -48,6 +48,16 @@ public class Dog implements Serializable {
 	public String toString() {
 
 		return "Dog [id: " + id + ", name: " + name + "] " + color;
+	}
+
+	@Override
+	public int compareTo(Dog d) {
+		// return positive: this > incoming object
+		// return 0: this = incoming object
+		// return negative: this < incoming object
+
+		// in case id is smaller than 1, stack overflow
+		return this.getId() - d.getId();
 	}
 
 }
