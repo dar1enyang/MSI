@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="ud" class="com.mercury.daos.UserDao"></bean>
+    <bean id="udd" class="com.mercury.daos.UserDao"></bean>
+    <!--  constructor  -->
+    <bean id="rd" class="com.mercury.daos.RoomDao" lazy-init="true">
+        <constructor-arg index="0" value="4"></constructor-arg>
+        <constructor-arg index="1" value="abc"></constructor-arg>
+    </bean>
+
+
+    <bean id="rdd" class="com.mercury.daos.RoomDao" lazy-init="true">
+        <property name="level" value="2"></property>
+        <property name="flag" value="xxx"></property>
+    </bean>
+    
+    <bean id="hs" class="com.mercury.services.HrService">
+        <property name="ud" ref="ud"></property>
+        <property name="rd" ref="rd"></property>
+    </bean>
+
+    <bean id="rs" class="com.mercury.services.RegistrationService">
+        <property name="ud" ref="ud"></property>
+    </bean>
+
+    <bean id="fd" class="com.mercury.daos.FacilityDao" scope="prototype"></bean>
+
+    <bean id="ts" class="com.mercury.services.TrainingService">
+        <property name="fd" ref="fd"></property>
+    </bean>
+</beans>
