@@ -63,6 +63,7 @@ class InfoBoard {
     }
 }
 
+
 final class Flight implements Runnable {
     private int id, companyId;
     private String from, to;
@@ -131,7 +132,7 @@ final class Flight implements Runnable {
 }
 public class Simulator {
 
-    public static void testThreadPool(List<Flight> flightList) {
+    public static void flightStart(List<Flight> flightList) {
         // Creating a thread pool
         // util class
         ExecutorService es = Executors.newCachedThreadPool(); // unlimited thread
@@ -150,7 +151,7 @@ public class Simulator {
             infoBoard.getFlights().add(new Flight(2, 2, "KEE", "LLL", 3000));
             infoBoard.getFlights().add(new Flight(1, 1, "KK", "YY", 3000));
         }
-        testThreadPool(infoBoard.getFlights());
+        flightStart(infoBoard.getFlights());
 
     }
 }
