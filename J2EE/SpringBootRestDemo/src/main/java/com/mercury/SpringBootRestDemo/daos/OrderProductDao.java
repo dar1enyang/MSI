@@ -1,7 +1,7 @@
 package com.mercury.SpringBootRestDemo.daos;
 
-import com.mercury.SpringBootRestDemo.http.Response;
+import com.mercury.SpringBootRestDemo.beans.OrderProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderProdcutDao extends JpaRepository<Response, Integer> {
+public interface OrderProductDao extends JpaRepository<OrderProduct, Integer> {
 }

@@ -1,4 +1,4 @@
-package com.mercury.SpringBootRestDemo.securities;
+package com.mercury.SpringBootRestDemo.security;
 
 import com.mercury.SpringBootRestDemo.beans.User;
 import com.mercury.SpringBootRestDemo.daos.UserDao;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @create: 2019-08-21 17:33
  **/
 
-@Service
+//@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired

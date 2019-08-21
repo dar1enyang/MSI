@@ -22,7 +22,7 @@ public class UserService {
 	private UserDao userDao;
 	
 	// ?
-	@Autowired
+//	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
 	public List<User> getAll() {
