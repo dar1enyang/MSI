@@ -25,9 +25,11 @@ public class OrderProduct {
 
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
+    @JoinColumn(name = "ORDER_ID")
     private Order order;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
+    @JoinColumn(name = "PRODUCT_ID")
     private Product product;
 
     public OrderProduct() {

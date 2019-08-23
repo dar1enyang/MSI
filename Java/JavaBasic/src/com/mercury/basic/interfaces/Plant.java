@@ -6,7 +6,7 @@ package com.mercury.basic.interfaces;
 @FunctionalInterface
 public interface Plant {
 	/*
-	 * field: interface can only have public / static / final field
+	 * field: interface can only have public static final field
 	 * 
 	 * 
 	 * 

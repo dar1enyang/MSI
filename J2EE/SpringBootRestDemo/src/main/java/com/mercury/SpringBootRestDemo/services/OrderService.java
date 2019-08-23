@@ -44,9 +44,12 @@ public class OrderService {
 		try {
 			List<OrderProduct> purchases = order.getPurchases();
 			purchases.forEach((orderProduct) -> {
+				// enrichment
 				Product product = (Product) productDao.findById(orderProduct.getProduct().getId()).get();
 				
 				orderProduct.setProduct(product);
+				// orderId currently is null
+				// so you need to insert into order table to get orderId
 				orderProduct.setOrder(order);
 			});
 			orderDao.save(order);
